@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<title>Insert title here</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="js/board.js"></script>
+	<script src="js/canvasAction.js"></script>
+	<script src="js/sideMenuScrolling.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+	
+</head>
+
+
+<body onload="InitializeStaticMenu();">
+	my canvas<br/>
+	
+	<canvas id="cv" width=800 height=800></canvas>
+	<script> 
+		console.log(window.innerWidth);
+		console.log(window.innerHeight);
+		var canvas = $('#cv').get(0);
+		canvas.width  = window.innerWidth;
+		canvas.height = window.innerHeight;
+		
+	</script>
+	
+	<div id="STATICMENU">
+		<div class = "menu">
+			<change>
+				<fieldset>
+					<legend>생상변경</legend>
+					<select id = 'pen_color'> </select>
+				</fieldset>
+				
+				<input type = "range" id="sv" min="2" max="10" required />
+			</change>
+			<input type = "button" id="cbtn" value="clear" required />
+		</div>
+	</div>
+</body>
+</html>

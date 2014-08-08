@@ -1,0 +1,96 @@
+<!doctype html>  
+<head>
+<meta charset="UTF-8">
+<title>Think simple - Home</title>
+<link rel="icon" href="images/favicon.gif" type="image/x-icon"/>
+ <!--[if lt IE 9]>
+ <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+<link rel="shortcut icon" href="images/favicon.gif" type="image/x-icon"/> 
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link type="text/css" href="css/css3.css" rel="stylesheet" />
+<script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.pikachoose.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="js/board.js"></script>
+<script src="js/canvasAction.js"></script>
+	<script language="javascript">
+		$(document).ready(
+			function (){
+				$("#pikame").PikaChoose();
+			});
+		 document.oncontextmenu = function (e) {
+			   alert("오른쪽버튼을 이용할 수 없습니다...");
+			   return false;
+			  }
+		 
+		 document.ondragstart = function (e) {  
+			return false;
+		  }
+		 document.onselectstart  = function (e) {  
+				return false;
+			  }
+		
+	</script>
+		
+
+
+    </head>
+    <body>
+	
+    <!--start container-->
+    <div id="container">
+
+    <!--start header-->
+
+    <header>
+ 
+    <!--start logo-->
+    <a href="#" id="logo"><img src="images/logo.png" width="221" height="100" alt="logo"/></a>    
+
+	<!--end logo-->
+	
+   <!--start menu-->
+
+	<nav>
+    <ul>
+    <li><a href="#" class="current">Home</a>
+
+	</li>
+    <li><a href="#">
+    <fieldset>
+		<legend>색상변경</legend>
+		<select id = 'pen_color'> </select>
+	</fieldset></a>
+	</li>
+	<li><a href="#"><input type = "range" id="sv" min="2" max="10" required /></a></li>
+	<li><a href="#">Portfolio</a></li>
+    <li><a href="#">News</a></li>
+
+	
+			
+
+    </ul>
+    </nav>
+	<!--end menu-->
+	
+
+    <!--end header-->
+	</header>
+
+
+   <!--start intro-->
+
+   <div id="intro">
+   
+   <div class="group_bannner_down" >  	   
+		<canvas id="cv" width= document.body.clientWidth height="2000%">sd</canvas>
+		
+	<br/>
+   </div>
+   
+   </div>
+   
+   <!--end intro-->
+   </body></html>

@@ -1,0 +1,43 @@
+body {
+  margin:0 auto;
+  //padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  -webkit-user-select:none;
+}
+
+#cv{
+	//width: 800px;
+	width: window.innerWidth;
+	//height: 800px;
+	height: window.innerHeight;
+	//background-image:url('../images/blackboard.jpg');
+	float:left;
+}
+
+
+
+fieldset{
+	float:left:left;
+}
+
+
+a {
+  color: #00B7FF;
+}
+
+#sidebox { 
+	background-color:#F0F0F0; 
+	position:absolute; 
+	width:120px; 
+	top:433px; 
+	right:420px; 
+	padding: 3px 10px
+}
+
+#STATICMENU { 
+	margin: 0pt; 
+	padding: 0pt; 
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
