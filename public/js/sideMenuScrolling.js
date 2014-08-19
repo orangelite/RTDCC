@@ -2,11 +2,10 @@
  * New node file
  */
 
-
 var stmnLEFT = 10; // 오른쪽 여백 
 var stmnGAP1 = 0; // 위쪽 여백 
-var stmnGAP2 = 150; // 스크롤시 브라우저 위쪽과 떨어지는 거리 
-var stmnBASE = 150; // 스크롤 시작위치 
+var stmnGAP2 = 50; // 스크롤시 브라우저 위쪽과 떨어지는 거리 
+var stmnBASE = 50; // 스크롤 시작위치 
 var stmnActivateSpeed = 25; //스크롤을 인식하는 딜레이 (숫자가 클수록 느리게 인식)
 var stmnScrollSpeed = 10; //스크롤 속도 (클수록 느림)
 var stmnTimer;
@@ -37,4 +36,5 @@ function InitializeStaticMenu() {
 	document.getElementById('STATICMENU').style.top = document.body.scrollTop
 			+ stmnBASE + 'px';
 	RefreshStaticMenu();
+	console.log("init");
 }

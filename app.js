@@ -9,6 +9,10 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
 
+var fs = require('fs')
+   , formidable = require('formidable');
+
+
 var app = express();
 var server = app.listen(3000);
 var io = require('socket.io').listen(server);
@@ -23,7 +27,11 @@ io.sockets.on('connection', function(socket){
 	socket.on('disconnect',function(){
 		console.log('user disconnected');
 	});
+	
+
+	
 });
+
 
 // all environments
 //app.set('port', process.env.PORT || 3000);
@@ -43,5 +51,58 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+
+
+
+
+// doc to pdf
+var pro = require('child_process');
+//var command = "cd ..; cd jodconverter-core-3.0-beta-4; java -jar lib/jodconverter-core-3.0-beta-4.jar alpha.odt alpha.pdf";
+var command = "cd uploads; java -jar jodconverter-2.2.2/lib/jodconverter-cli-2.2.2.jar ";
+
+
+
+function PDFchange(fin, fout){
+	pro.exec(command + fin + fout, function(error, stdout, stderr){
+		console.log(stdout);
+		console.log(stderr);
+		console.log("end");
+		//ioconnected.PDFload(fin);
+		
+	});
+}
+
+
+
+
+// file upload
+app.post('/upload',function(req,res){
+	
+	console.log("file upload..");
+    console.log(req.files);
+    fs.readFile(req.files.userFile.path, function (err, data) {
+      // ...
+    	console.log("reading...");
+      var newPath = __dirname + "/uploads/" + req.files.userFile.name;
+      console.log(newPath);
+      
+      fs.writeFile(newPath, data, function (err) {
+    	  if(err){
+    		  throw err;
+    	  }else{
+    		  console.log(req.files.userFile.name);
+    		  res.redirect("back");
+    		  //pro.exec("ls",function(error, stdout, stderr){
+    		//		console.log(stdout);
+    		//		console.log(stderr);
+    		 // });
+    		  PDFchange(req.files.userFile.name," test.pdf");
+    		  //res.send(newPath);
+    		  //io.socket.broadcast.emit('file_upload',newPath);
+    		  
+    	  }
+      });
+    });
+ });
 
 

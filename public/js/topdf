@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd ..;
+cd jodconverter-core-3.0-beta-4;
+java -jar lib/jodconverter-core-3.0-beta-4.jar alpha.odt alpha.pdf;

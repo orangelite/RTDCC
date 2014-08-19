@@ -15,8 +15,8 @@ var socket;
 
 var msg = {
 	line : {
-		send : function(type,x,y){
-			socket.emit('linesend',{'type':type, 'x':x, 'y':y, 'color':shape.color, 'width':shape.width});
+		send : function(type, x, y){
+			socket.emit('linesend',{'type':type, 'x':x, 'y':y, 'color':shape.color, 'line':shape.line, 'transWidth':window.innerWidth});
 		}
 	}
 };
